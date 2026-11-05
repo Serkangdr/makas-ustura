@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0a08" />
+    <title>MAKAS & USTURA</title>
+    <meta
+      name="description"
+      content="Makas & Ustura — Geleneksel ustalık modern lüksle buluşuyor. Koltuğunuzu bugün ayırtın."
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23d4af37'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='50' font-weight='bold' fill='%23121212' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/projeler/makas-ustura.css" />
+    <noscript>
+      <style>
+        .curtain {
+          display: none;
+        }
+      </style>
+    </noscript>
+
+    <script src="assets/vendor/gsap.min.js" defer></script>
+    <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="assets/vendor/lenis.min.js" defer></script>
+    <script src="assets/js/projeler/makas-ustura.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#services">İçeriğe geç</a>
+
+    <!-- SVG ikonlar -->
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-scissors" viewBox="0 0 24 24">
+        <circle cx="6" cy="6.5" r="3" />
+        <circle cx="6" cy="17.5" r="3" />
+        <path d="M8.4 8.3 20 17.5M8.4 15.7 20 6.5" />
+      </symbol>
+      <symbol id="i-towel" viewBox="0 0 24 24">
+        <path d="M5 9.5h14v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-9Z" />
+        <path d="M5 13.5h14M9 3.5c-.8 1 .8 2 0 3M12 3c-.8 1 .8 2 0 3M15 3.5c-.8 1 .8 2 0 3" />
+      </symbol>
+      <symbol id="i-oil" viewBox="0 0 24 24">
+        <path d="M10 2.5h4v3h-4zM9 5.5h6l1 3v11a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-11l1-3Z" />
+        <path d="M12 12.2c1.2 1.4 1.8 2.3 1.8 3.1a1.8 1.8 0 0 1-3.6 0c0-.8.6-1.7 1.8-3.1Z" />
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" /></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24">
+        <path d="M12 21.5s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12Z" />
+        <circle cx="12" cy="9.5" r="2.6" />
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24">
+        <path
+          d="M6.3 3.2h3.1l1.5 4-2 1.4a12.3 12.3 0 0 0 5.5 5.5l1.4-2 4 1.5v3.1a2 2 0 0 1-2.2 2A16.6 16.6 0 0 1 4.3 5.4a2 2 0 0 1 2-2.2Z"
+        />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <rect x="2.5" y="5" width="19" height="14" rx="1.5" />
+        <path d="m3.5 6.5 8.5 6.3 8.5-6.3" />
+      </symbol>
+      <symbol id="i-cal-plus" viewBox="0 0 24 24">
+        <rect x="3.5" y="5" width="17" height="15.5" rx="2" />
+        <path d="M3.5 9.5h17M8 3v4M16 3v4M12 12.5v5M9.5 15h5" />
+      </symbol>
+      <symbol id="i-cal-x" viewBox="0 0 24 24">
+        <rect x="3.5" y="5" width="17" height="15.5" rx="2" />
+        <path d="M3.5 9.5h17M8 3v4M16 3v4M10 13l4 4M14 13l-4 4" />
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" /></symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          stroke="none"
+          d="M12.031 0C5.395 0 .012 5.383.012 12.019c0 2.122.552 4.195 1.602 6.01L.06 24l6.113-1.603c1.745.968 3.737 1.48 5.856 1.48h.004c6.634 0 12.015-5.383 12.015-12.02S18.667 0 12.031 0zm0 21.892c-1.8 0-3.565-.483-5.111-1.401l-.367-.217-3.795.996 1.018-3.702-.238-.378a9.98 9.98 0 01-1.528-5.289c0-5.508 4.484-9.992 9.998-9.992s9.996 4.483 9.996 9.992c0 5.51-4.483 9.991-9.973 9.991zm5.485-7.493c-.3-.151-1.782-.88-2.06-.98-.277-.1-.478-.151-.68.151-.2.302-.78 1.002-.956 1.202-.178.201-.356.226-.656.076-.3-.151-1.272-.469-2.423-1.498-.895-.801-1.501-1.79-1.678-2.091-.177-.301-.019-.464.131-.614.135-.135.3-.351.452-.527.15-.176.201-.301.302-.502.1-.202.05-.378-.025-.529-.076-.151-.68-1.64-.932-2.247-.245-.591-.494-.511-.68-.521l-.578-.01c-.2 0-.528.075-.804.376-.277.301-1.055 1.03-1.055 2.508 0 1.478 1.08 2.906 1.231 3.107.151.2 2.119 3.235 5.132 4.537 2.02.873 2.76.994 3.754.912.833-.069 2.56-1.046 2.92-2.056.36-1.01.36-1.876.252-2.057-.108-.18-.408-.282-.708-.433z"
+        />
+      </symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          stroke="none"
+          d="M13.5 22v-8.2h2.8l.4-3.3h-3.2V8.4c0-.95.27-1.6 1.63-1.6h1.72V3.85A23 23 0 0 0 14.33 3.7c-2.5 0-4.2 1.52-4.2 4.32v2.48H7.3v3.3h2.83V22h3.37Z"
+        />
+      </symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="5" />
+        <circle cx="12" cy="12" r="4.2" />
+        <circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none" />
+      </symbol>
+      <symbol id="i-x" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          stroke="none"
+          d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78L17.75 3Zm-1.08 16.18h1.7L7.4 4.73H5.58l11.09 14.45Z"
+        />
+      </symbol>
+      <symbol id="i-tiktok" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          stroke="none"
+          d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.1a6.4 6.4 0 1 0 5.4 6.3V8.6a8 8 0 0 0 4.4 1.3V6.5A4.5 4.5 0 0 1 16.6 2Z"
+        />
+      </symbol>
+    </svg>
+
+    <!-- Açılış perdesi -->
+    <div class="curtain" aria-hidden="true">
+      <div class="curtain__panel curtain__panel--top"></div>
+      <div class="curtain__panel curtain__panel--bottom"></div>
+      <span class="curtain__mark">M<em>&amp;</em>U</span>
+    </div>
+
+    <div class="cursor" aria-hidden="true"></div>
+
+    <nav class="navbar" aria-label="Ana menü">
+      <a class="logo" href="#top">MAKAS <em>&amp;</em> USTURA</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#top">Ana Sayfa</a></li>
+        <li><a href="#services">Hizmetler</a></li>
+        <li><a href="#staff-section">Berberler</a></li>
+        <li><a href="#gallery">Galeri</a></li>
+        <li><a href="#contact">İletişim</a></li>
+      </ul>
+      <a href="#staff-section" class="btn-gold-outline"><span>Randevu Al</span></a>
+      <button
+        class="hamburger"
+        type="button"
+        aria-label="Menüyü aç"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </nav>
+
+    <header class="hero" id="top">
+      <div class="hero__media" data-hero-media>
+        <img
+          src="https://images.unsplash.com/photo-1536520002442-39764a41e987?q=80&w=2000&auto=format&fit=crop"
+          alt=""
+          width="2000"
+          height="1333"
+        />
+      </div>
+      <div class="hero-content">
+        <h1 class="hero__title">
+          <span class="line"
+            ><span>Bakım <em>Sanatını</em></span></span
+          >
+          <br />
+          <span class="line"><span>Deneyimleyin.</span></span>
+        </h1>
+        <p class="hero__text" data-hero-fade>
+          Geleneksel ustalık modern lüksle buluşuyor. Koltuğunuzu bugün ayırtın.
+        </p>
+        <a href="#staff-section" class="btn-gold" data-hero-fade data-magnetic>
+          <span>Deneyimi Başlat</span>
+          <svg class="ico" aria-hidden="true"><use href="#i-arrow" /></svg>
+        </a>
+      </div>
+      <a class="hero__badge" href="#services" aria-label="Hizmetlere in" data-hero-fade>
+        <svg class="hero__ring" viewBox="0 0 200 200" aria-hidden="true">
+          <defs>
+            <path id="ring" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" />
+          </defs>
+          <!-- textLength: yazı çemberin çevresine (2πr ≈ 490) tam oturur -->
+          <text>
+            <textPath href="#ring" textLength="486" lengthAdjust="spacing">
+              MAKAS &amp; USTURA ✦ MAKAS &amp; USTURA ✦
+            </textPath>
+          </text>
+        </svg>
+        <svg class="ico hero__badge-ico" aria-hidden="true"><use href="#i-scissors" /></svg>
+      </a>
+    </header>
+
+    <!-- Hizmet şeridi -->
+    <div class="ribbon" aria-hidden="true">
+      <!-- iki eş yarı: animasyon -%50'ye kayıp başa sarar -->
+      <div class="ribbon__track">
+        <span>Hassas Saç Kesimi</span><i>✦</i><span>Sıcak Havlu Tıraşı</span><i>✦</i
+        ><span>Sakal Şekillendirme</span><i>✦</i><span>Hassas Saç Kesimi</span><i>✦</i
+        ><span>Sıcak Havlu Tıraşı</span><i>✦</i><span>Sakal Şekillendirme</span><i>✦</i
+        ><span>Hassas Saç Kesimi</span><i>✦</i><span>Sıcak Havlu Tıraşı</span><i>✦</i
+        ><span>Sakal Şekillendirme</span><i>✦</i><span>Hassas Saç Kesimi</span><i>✦</i
+        ><span>Sıcak Havlu Tıraşı</span><i>✦</i><span>Sakal Şekillendirme</span><i>✦</i>
+      </div>
+    </div>
+
+    <section id="services" class="services-section">
+      <header class="sec-head">
+        <span class="sec-no" aria-hidden="true">01</span>
+        <h2 class="section-title" data-reveal-words>Hizmetlerimiz</h2>
+      </header>
+      <div class="services-grid">
+        <article class="service-item" data-reveal-card>
+          <div class="service-item__media">
+            <img
+              src="https://images.unsplash.com/photo-1657105052497-f996284ffff8?q=80&w=900&h=1100&auto=format&fit=crop"
+              alt=""
+              width="900"
+              height="1100"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-item__body">
+            <span class="service-item__no" aria-hidden="true">I</span>
+            <svg class="ico service-item__ico" aria-hidden="true"><use href="#i-scissors" /></svg>
+            <h3>Hassas Saç Kesimi</h3>
+            <p>Yüz hatlarınıza uygun, modern ve estetik saç kesimi deneyimi.</p>
+          </div>
+        </article>
+        <article class="service-item" data-reveal-card>
+          <div class="service-item__media">
+            <img
+              src="https://images.unsplash.com/photo-1532710093739-9470acff878f?q=80&w=900&h=1100&auto=format&fit=crop"
+              alt=""
+              width="900"
+              height="1100"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-item__body">
+            <span class="service-item__no" aria-hidden="true">II</span>
+            <svg class="ico service-item__ico" aria-hidden="true"><use href="#i-towel" /></svg>
+            <h3>Sıcak Havlu Tıraşı</h3>
+            <p>Geleneksel yöntemlerle, sıcak havlu eşliğinde rahatlatıcı sakal tıraşı.</p>
+          </div>
+        </article>
+        <article class="service-item" data-reveal-card>
+          <div class="service-item__media">
+            <img
+              src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=900&h=1100&auto=format&fit=crop"
+              alt=""
+              width="900"
+              height="1100"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-item__body">
+            <span class="service-item__no" aria-hidden="true">III</span>
+            <svg class="ico service-item__ico" aria-hidden="true"><use href="#i-oil" /></svg>
+            <h3>Sakal Şekillendirme</h3>
+            <p>Sakalınızın yapısına uygun bakım yağları ve profesyonel şekillendirme.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <main>
+      <section id="staff-section" class="staff-section">
+        <header class="sec-head">
+          <span class="sec-no" aria-hidden="true">02</span>
+          <h2 class="section-title" data-reveal-words>Yetenekli Berberlerimiz</h2>
+        </header>
+        <div class="staff-grid">
+          <article class="staff-card" data-reveal-card>
+            <div class="card-img">
+              <img
+                src="https://images.unsplash.com/photo-1553521041-d168abd31de3?q=80&w=700&h=900&auto=format&fit=crop"
+                alt="Ahmet Yılmaz"
+                width="700"
+                height="900"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-info">
+              <h3>Ahmet Yılmaz</h3>
+              <p>Master Barber</p>
+              <button type="button" class="btn-book" data-staff="Ahmet Yılmaz">
+                <span>Programı Gör & Randevu</span>
+                <svg class="ico" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="staff-card" data-reveal-card>
+            <div class="card-img">
+              <img
+                src="https://images.unsplash.com/photo-1516646720587-727f6728837d?q=80&w=700&h=900&auto=format&fit=crop"
+                alt="Mehmet Demir"
+                width="700"
+                height="900"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-info">
+              <h3>Mehmet Demir</h3>
+              <p>Saç Tasarım Uzmanı</p>
+              <button type="button" class="btn-book" data-staff="Mehmet Demir">
+                <span>Programı Gör & Randevu</span>
+                <svg class="ico" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="staff-card" data-reveal-card>
+            <div class="card-img">
+              <img
+                src="https://images.unsplash.com/photo-1704572636607-78b65b21b165?q=80&w=700&h=900&auto=format&fit=crop"
+                alt="Caner Erkin"
+                width="700"
+                height="900"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-info">
+              <h3>Caner Erkin</h3>
+              <p>Sakal & Cilt Bakımı</p>
+              <button type="button" class="btn-book" data-staff="Caner Erkin">
+                <span>Programı Gör & Randevu</span>
+                <svg class="ico" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="staff-card" data-reveal-card>
+            <div class="card-img">
+              <img
+                src="https://images.unsplash.com/photo-1595294572864-ddb46d169dbb?q=80&w=700&h=900&auto=format&fit=crop"
+                alt="Burak Yıl"
+                width="700"
+                height="900"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-info">
+              <h3>Burak Yıl</h3>
+              <p>Junior Barber</p>
+              <button type="button" class="btn-book" data-staff="Burak Yıl">
+                <span>Programı Gör & Randevu</span>
+                <svg class="ico" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="schedule-section" class="schedule-section hidden" aria-live="polite">
+        <div class="schedule-container">
+          <h2 id="selected-staff-name" class="schedule-title">Randevu Programı</h2>
+          <p class="info-text">Aşağıdaki tablodan size uygun günü ve saati seçiniz.</p>
+          <div class="schedule-scroll">
+            <div class="schedule-grid" id="schedule-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="showcase-section">
+        <header class="sec-head">
+          <span class="sec-no" aria-hidden="true">03</span>
+          <h2 class="section-title-dark" data-reveal-words>Client Showcase</h2>
+        </header>
+        <div class="showcase-grid">
+          <figure class="showcase-item item-tall" data-reveal-card>
+            <img
+              src="https://images.unsplash.com/photo-1567894340315-735d7c361db0?q=80&w=900&h=1200&auto=format&fit=crop"
+              alt="Model"
+              width="900"
+              height="1200"
+              loading="lazy"
+            />
+            <figcaption class="overlay">
+              <p>Textured Crop - Styled by Mehmet</p>
+            </figcaption>
+          </figure>
+          <figure class="showcase-item" data-reveal-card>
+            <img
+              src="https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?q=80&w=800&h=800&auto=format&fit=crop"
+              alt="Model"
+              width="800"
+              height="800"
+              loading="lazy"
+            />
+            <figcaption class="overlay"><p>Fade Cut - Styled by Ahmet</p></figcaption>
+          </figure>
+          <figure class="showcase-item" data-reveal-card>
+            <img
+              src="https://images.unsplash.com/photo-1599011176306-4a96f1516d4d?q=80&w=800&h=800&auto=format&fit=crop"
+              alt="Model"
+              width="800"
+              height="800"
+              loading="lazy"
+            />
+            <figcaption class="overlay"><p>Beard Trim - Styled by Caner</p></figcaption>
+          </figure>
+          <figure class="showcase-item" data-reveal-card>
+            <img
+              src="https://images.unsplash.com/photo-1562004760-aceed7bb0fe3?q=80&w=800&h=800&auto=format&fit=crop"
+              alt="Model"
+              width="800"
+              height="800"
+              loading="lazy"
+            />
+            <figcaption class="overlay"><p>Classic Look - Styled by Burak</p></figcaption>
+          </figure>
+          <figure class="showcase-item" data-reveal-card>
+            <img
+              src="https://images.unsplash.com/photo-1644199161554-f9e84cd64b7b?q=80&w=800&h=800&auto=format&fit=crop"
+              alt="Model"
+              width="800"
+              height="800"
+              loading="lazy"
+            />
+            <figcaption class="overlay"><p>Buzz Cut - Styled by Mehmet</p></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="contact" class="visit-us-section">
+        <div class="visit-container" data-reveal-card>
+          <div class="map-wrapper">
+            <iframe
+              title="Makas & Ustura konumu"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.659972740286!2d29.023456!3d40.984567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDU5JzA0LjQiTiAyOcKwMDEnMjQuNCJF!5e0!3m2!1str!2str!4v1625680000000!5m2!1str!2str"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+            ></iframe>
+          </div>
+
+          <div class="info-wrapper">
+            <span class="sec-no" aria-hidden="true">04</span>
+            <h3>Visit Us</h3>
+
+            <div class="contact-row">
+              <svg class="ico" aria-hidden="true"><use href="#i-pin" /></svg>
+              <span>118 Bağdat Caddesi, Kadıköy, İstanbul</span>
+            </div>
+
+            <div class="contact-row">
+              <svg class="ico" aria-hidden="true"><use href="#i-phone" /></svg>
+              <span>0212 123 45 67</span>
+            </div>
+
+            <div class="contact-row">
+              <svg class="ico" aria-hidden="true"><use href="#i-mail" /></svg>
+              <span>randevu@makasustura.com</span>
+            </div>
+
+            <div class="opening-hours">
+              <p>Pazartesi - Cumartesi: 09:00 - 21:00</p>
+              <p>Pazar: Kapalı</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo" data-footer-mark>MAKAS <em>&amp;</em> USTURA</div>
+
+        <ul class="footer-nav">
+          <li><a href="#top">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#staff-section">Barbers</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"
+            ><svg class="ico" aria-hidden="true"><use href="#i-facebook" /></svg
+          ></a>
+          <a href="#" aria-label="Instagram"
+            ><svg class="ico" aria-hidden="true"><use href="#i-instagram" /></svg
+          ></a>
+          <a href="#" aria-label="Twitter"
+            ><svg class="ico" aria-hidden="true"><use href="#i-x" /></svg
+          ></a>
+          <a href="#" aria-label="TikTok"
+            ><svg class="ico" aria-hidden="true"><use href="#i-tiktok" /></svg
+          ></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Copyright © 2025 makasustura.com</span>
+        <span>MAKAS & USTURA</span>
+      </div>
+    </footer>
+
+    <div
+      id="appointment-modal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="appointment-title"
+      hidden
+    >
+      <div class="modal-content">
+        <button type="button" class="close-btn" aria-label="Kapat">
+          <svg class="ico" aria-hidden="true"><use href="#i-close" /></svg>
+        </button>
+        <h3 id="appointment-title" class="modal-title">Randevuyu Tamamla</h3>
+        <p id="modal-details" class="modal-details"></p>
+
+        <form id="appointment-form">
+          <div class="form-group">
+            <input
+              type="text"
+              id="customer-name"
+              placeholder="Adınız Soyadınız"
+              aria-label="Adınız Soyadınız"
+              autocomplete="name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="tel"
+              id="customer-phone"
+              placeholder="Telefon Numaranız"
+              aria-label="Telefon Numaranız"
+              autocomplete="tel"
+              required
+            />
+          </div>
+          <button type="submit" class="whatsapp-btn">
+            <svg class="ico" aria-hidden="true"><use href="#i-whatsapp" /></svg> WhatsApp ile Onayla
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
